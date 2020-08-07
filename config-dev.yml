@@ -1,6 +1,9 @@
+server:
+  port:8866
+
 spring:
   application:
-    name: cloud-config-client-hyt
+    name: cloud-config-client-dev
  
 config:
   info: i will remember you forever!
