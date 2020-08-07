@@ -1,12 +1,6 @@
-server:
-  port: 9999
 spring:
   application:
-    name: cloud-config-center
- 
-eureka:
-  client:
-    register-with-eureka: true #是否向注册中心注册自己
+    name: cloud-config-client-hyt
  
 config:
   info: i will remember you forever!
