@@ -4,16 +4,24 @@ spring:
   application:
     name: cloud-config-center
   cloud:
-    config:
+    config: #配置-分布式配置中心
       server:
         git:
-          uri:  填写你自己的github路径
-          search-paths:
-            - springcloud-config
-      label: master
+          uri: https://github.com/huangyutingsky/sprincloud-config.git #https协议的github仓库地址
+          search-paths: /**
+      label: master #仓库分支名称
+
 eureka:
   client:
+    register-with-eureka: true #是否向注册中心注册自己
+    fetch-registry: true #服务发现，是否从Eureka中获取注册信息
     service-url:
-      defaultZone:  http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/ #向哪个注册中心注册服务
+  instance:
+    prefer‐ip‐address: true #将自己的ip地址注册到Eureka服务中
+    ip‐address: ${IP_ADDRESS:127.0.0.1} #鼠标悬浮微服务地址时显示IP信息
+    instance‐id: ${spring.application.name}:${server.port} #指定实例id
+    lease-renewal-interval-in-seconds: 1 #Eureka客户端发送心跳的时间间隔（单位秒，默认30秒）
+    lease-expiration-duration-in-seconds: 2 #Eureka服务端在收到最后一次心跳后等待时间上限（单位秒，默认90秒），超时将剔除服务
  
 
