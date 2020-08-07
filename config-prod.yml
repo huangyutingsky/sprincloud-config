@@ -1,12 +1,5 @@
 server:
-  port: 9989
+  port: 9889
 spring:
   application:
     name: cloud-config-center
-  cloud:
-    config: #配置-分布式配置中心
-      server:
-        git:
-          uri: https://github.com/huangyutingsky/sprincloud-config.git #https协议的github仓库地址
-          search-paths: /**
-      label: master #仓库分支名称
