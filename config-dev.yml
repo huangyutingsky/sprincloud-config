@@ -6,5 +6,5 @@ spring:
     name: cloud-config-client-dev
  
 config:
-  info: i will remember you forever! version02
+  info: i will remember you forever! version03
 
