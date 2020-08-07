@@ -7,3 +7,7 @@ spring:
 eureka:
   client:
     register-with-eureka: true #是否向注册中心注册自己
+ 
+config:
+  info: i will remember you forever!
+
